@@ -1,0 +1,37 @@
+<div class="dialog-wrapper">
+  <h2 mat-dialog-title>Install Angular</h2>
+  <div mat-dialog-content class="mat-typography">
+    <h3>Develop across all platforms</h3>
+    <p>Learn one way to build applications with Angular and reuse your code and abilities to build
+      apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+
+
+    <form [formGroup]="formProfile" (keydown.enter)="onProfileSubmit()" style="height: 100%;">
+      <app-input-text [placeholder]="'Никнейм'" formControlName="displayName" [id]="'displayName'" [type]="'text'"
+        [value]="(currentUser$ | async).displayName">
+      </app-input-text>
+
+      <app-input-text [placeholder]="'Расскажите о себе что-нибудь'" formControlName="userDescription"
+        [id]="'userDescription'" [type]="'text'" *ngIf="(currentUser$ | async).userDesription"
+        [value]="(currentUser$ | async).userDesription">
+      </app-input-text>
+
+      <app-input-text [placeholder]="'Расскажите о себе что-нибудь'" formControlName="userDescription"
+        [id]="'userDescription'" [type]="'text'" *ngIf="!(currentUser$ | async).userDesription" [value]="''">
+      </app-input-text>
+
+    </form>
+
+
+  </div>
+
+  <mat-dialog-actions align="end" style="padding-bottom: 20px;">
+    <app-mat-btn-small mat-dialog-close text="Отмена" [disabled]="false" style="margin-right: 10px;">
+    </app-mat-btn-small>
+
+    <app-mat-btn-small [mat-dialog-close]="true" style="margin-right: 20px;" text="Сохранить"
+      (click)="onProfileSubmit();" [disabled]="false">
+    </app-mat-btn-small>
+
+  </mat-dialog-actions>
+</div>

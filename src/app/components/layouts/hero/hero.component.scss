@@ -1,0 +1,15 @@
+.hero-wrapper {
+  width: 100%;
+  justify-content: center;
+  // background-color: rgb(216, 252, 133);
+  background-color: var(--primary);
+}
+
+@media (max-width: 800px) {
+  .hero-wrapper {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+}
