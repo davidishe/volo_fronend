@@ -156,6 +156,7 @@ export class DialogContentComponent {
       this.accountService.updateUserProfile(this.formProfile.value).subscribe((response: IUser) => {
         this.currentUser = response;
         this.accountService.loadCurrentUser().subscribe();
+        this.dialog.closeAll();
       });
       this.forHideControlEdited();
 

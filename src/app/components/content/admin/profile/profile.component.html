@@ -28,7 +28,7 @@
         <app-mat-btn-small text="Обновить фото" (click)="file.click()" [disabled]="false">
         </app-mat-btn-small>
       </div>
-      <div class="user-card-content">
+      <div class="user-card-content user-card-section">
         <div class="user-card-content-inner">
 
           <div style="display: block;">
@@ -38,7 +38,7 @@
             <div *ngIf="!(currentUser$ | async).userDescription" style="opacity: 0.7;">
               Расскажите о себе что-нибудь
             </div>
-            <div *ngIf="(currentUser$ | async).userDescription">
+            <div *ngIf="(currentUser$ | async).userDescription" style="word-wrap: break-word;">
               {{(currentUser$ | async).userDescription}}
             </div>
             <br>
@@ -72,7 +72,7 @@
 
       </div>
 
-      <div>
+      <div class="user-card-section">
         <div class="user-card-header">
           <div class="status-title">Текущий статус</div>
           <div class="status-wrapper">
@@ -97,7 +97,7 @@
 
 
 
-      <div class="user-card-header">
+      <div class="user-card-header user-card-section">
         <div class="status-title">Роли</div>
         <div class="status-wrapper" style="display: grid;">
           <ng-container *ngFor="let role of (currentUser$ | async).userRoles">

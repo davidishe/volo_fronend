@@ -1,9 +1,7 @@
 <div class="dialog-wrapper">
-  <h2 mat-dialog-title>Install Angular</h2>
+  <h2 mat-dialog-title>Изменение данных</h2>
   <div mat-dialog-content class="mat-typography">
-    <h3>Develop across all platforms</h3>
-    <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-      apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+    <p>Обнови необходимые данные в форме, если это необходимо, и нажми кнопку "Сохранить"</p>
 
 
     <form [formGroup]="formProfile" (keydown.enter)="onProfileSubmit()" style="height: 100%;">
@@ -12,17 +10,15 @@
       </app-input-text>
 
       <app-input-text [placeholder]="'Расскажите о себе что-нибудь'" formControlName="userDescription"
-        [id]="'userDescription'" [type]="'text'" *ngIf="(currentUser$ | async).userDesription"
-        [value]="(currentUser$ | async).userDesription">
+        [id]="'userDescription'" [type]="'text'" *ngIf="(currentUser$ | async).userDescription"
+        [value]="(currentUser$ | async).userDescription">
       </app-input-text>
 
       <app-input-text [placeholder]="'Расскажите о себе что-нибудь'" formControlName="userDescription"
-        [id]="'userDescription'" [type]="'text'" *ngIf="!(currentUser$ | async).userDesription" [value]="''">
+        [id]="'userDescription'" [type]="'text'" *ngIf="!(currentUser$ | async).userDescription" [value]="''">
       </app-input-text>
 
     </form>
-
-
   </div>
 
   <mat-dialog-actions align="end" style="padding-bottom: 20px;">

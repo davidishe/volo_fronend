@@ -93,11 +93,12 @@
   width: 100%;
 }
 
-.user-card-left {
+.user-card-left,
+.user-card-section {
   width: 100%;
   position: relative;
   margin-bottom: 30px;
-  padding-right: 30px;
+  padding-right: 50px;
 }
 
 .no-photo {
