@@ -24,7 +24,7 @@ export class OnboardingGuard implements CanActivate {
         if (user && !user.isOnboarded) {
           this.openSnackBar('Заполни данные в профиле');
           this.router.navigate(['onboarding']);
-          return false;
+          // return false;
         } 
         if (auth && user.isOnboarded) {
           return true;

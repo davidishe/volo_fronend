@@ -58,13 +58,13 @@ export class OnboardingItemComponent implements OnInit {
   }
 
   setNameOfBanner(): void {
-    if (this.notChecked) {
-      this.isSelected = "Выбрано";
-    }
-    if (!this.notChecked) {
-      this.isSelected = "Не выбрано";
-    }
-    this.notChecked = !this.notChecked;
+    // if (this.notChecked) {
+    //   this.isSelected = "Выбрано";
+    // }
+    // if (!this.notChecked) {
+    //   this.isSelected = "Не выбрано";
+    // }
+    // this.notChecked = !this.notChecked;
   }
 
   setUserRole(event: any): void {
@@ -76,13 +76,16 @@ export class OnboardingItemComponent implements OnInit {
   onFormSubmit(formValue: any) {
     const previousToggleValue = formValue.enabled;
     if (previousToggleValue === false) {
-      this.roles.userRoles.push(this.role);    
+      this.roles.userRoles.push(this.role);
       this.addRole(this.role);
+      this.isSelected = "Выбрано";
     }
     if (previousToggleValue === true) {
       console.log('deleting');
       this.roles.userRoles = [];
       this.deleteRole(this.role);
+      this.isSelected = "Не выбрано";
+      
     }
   }
   

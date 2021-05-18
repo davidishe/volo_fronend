@@ -3,12 +3,6 @@
     <app-title [text]="(currentUser$ | async).displayName"
       [subtext]="'Здесь можно менять настройки твоего профиля туда-сюда'">
     </app-title>
-
-
-
-
-
-
     <div class="user-card">
 
       <div class="user-card-left">
@@ -114,23 +108,48 @@
 
 
   </section>
+
+
+  <section class="container">
+    <p>
+      У вас появились животные на временном содержании, зарегистрируйте их
+    </p>
+    <app-mat-btn-small (click)="2" text="Зарегистрировать" [disabled]="false">
+    </app-mat-btn-small>
+  </section>
+
+  <section class="container">
+    <p>
+      Зарегистрируйте приют, представителем которого вы являетесь
+    </p>
+    <app-mat-btn-small (click)="2" text="Зарегистрировать" [disabled]="false">
+    </app-mat-btn-small>
+  </section>
+
+
+  <section class="container">
+    <p>
+      Заполните дополнительные данные о компании
+    </p>
+    <app-mat-btn-small (click)="2" text="Заполнить" [disabled]="false">
+    </app-mat-btn-small>
+  </section>
+
+  <section class="container">
+    <p>
+      Вы представитель компании - добавьте услуги, которые хотите предоставлять бесплатно
+    </p>
+    <app-mat-btn-small (click)="2" text="Добавить" [disabled]="false">
+    </app-mat-btn-small>
+  </section>
+
+
 </main>
 
-<!-- <div class=" form-control-profile">
-  <div class="content-text" *ngIf="(currentUser$ | async).lastName">
-    {{(currentUser$ | async).lastName}}
-  </div>
-  <div class="content-text" *ngIf="!(currentUser$ | async).lastName">
-    Добавь свою фамилию
-  </div>
 
-  <div class="content-text">
-    {{(currentUser$ | async).userDescription}}
-  </div>
-  <div class="content-text" *ngIf="!(currentUser$ | async).userDescription">
-    Расскажи что-нибудь о себе
-  </div>
-</div> -->
+
+
+
 
 
 

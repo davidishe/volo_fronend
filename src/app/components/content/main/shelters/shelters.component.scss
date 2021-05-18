@@ -153,6 +153,10 @@
   justify-content: center;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 770px) {
   .grid {
     margin-top: 2rem;
