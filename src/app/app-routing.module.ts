@@ -13,6 +13,7 @@ import { ItemFormEditComponent } from './components/kit/item-form-edit/item-form
 import { AdminGuard } from './components/core/guards/admin.guard';
 import { OnboardingGuard } from './components/core/guards/onboarding.guard';
 import { OnboardingPageGuard } from './components/core/guards/onboardingpage.guard';
+import { HelpBoardComponent } from './components/content/main/help-board/help-board.component';
 
 
 const routes: Routes = [
@@ -26,11 +27,13 @@ const routes: Routes = [
   { path: 'pets/add/:type', component: ItemFormComponent, data: {breadcrumb: 'Добавление'}, canActivate: [OnboardingGuard]},
   { path: 'pets/:type/:id', component: ItemDetailedCardComponent, data: {breadcrumb: 'Подробности'}, canActivate: [OnboardingGuard]},
 
-
   { path: 'shelters', component: SheltersComponent, data: {breadcrumb: 'Приюты'}, canActivate: [OnboardingGuard]},
   { path: 'shelters/add/:type', component: ItemFormComponent, data: {breadcrumb: 'Добавление'}, canActivate: [OnboardingGuard]},
   { path: 'shelters/:type/:id', component: ItemDetailedCardComponent, data: {breadcrumb: 'Подробности'}, canActivate: [OnboardingGuard]},
   { path: 'shelters/:type/:id/edit', component: ItemFormEditComponent, data: {breadcrumb: 'Изменение'}, canActivate: [OnboardingGuard]},
+
+  { path: 'help', component: HelpBoardComponent, data: {breadcrumb: 'Помощь'}, canActivate: [OnboardingGuard]},
+
 
   { path: 'admin', loadChildren: () => import('./components/content/admin/admin.module').then(mod => mod.AdminModule),
   data: {breadcrumb: 'Администратор'}, canActivate: [AdminGuard]},

@@ -16,13 +16,13 @@ export class ErrorInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      if (!req.url.includes('checkmail') ) {
+      if (!req.url.includes('checkmail')  ) {
       next.handle(req).pipe(
         catchError(error => {
-          if (error) {
-            if (req.url.includes('api/account/current')) {
-              return next.handle(req);
-            }
+          if (error && !req.url.includes('api/account/current')) {
+            // if (req.url.includes('api/account/current')) {
+            //   return next.handle(req);
+            // }
             if (error.status === 400) {
               this.openSnackBar(error.error.message);
             }

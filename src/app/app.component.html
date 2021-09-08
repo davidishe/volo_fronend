@@ -13,13 +13,20 @@
       <div class="smile">
         🐶
       </div>
-      <div class="logo">Придумать</div>
+      <div class="logo">Volo</div>
     </div>
 
     <div class="menu">
       <div class="menu-section">
         <h3>МЕНЮ</h3>
         <ul>
+
+          <li class="menu-items" routerLinkActive="active-menu" [routerLink]="[ '/help']"
+            (click)="sideNavService.openNavSide()">
+            <i class="material-icons">favorite</i>
+            <a>Помощь</a>
+          </li>
+
           <li class="menu-items" [routerLink]="[ '/pets']" (click)="sideNavService.openNavSide()"
             routerLinkActive="active-menu">
             <i class="material-icons">pets</i>
@@ -30,11 +37,18 @@
             <i class="material-icons">villa</i>
             <a>Приюты</a>
           </li>
-          <li class="menu-items" routerLinkActive="active-menu">
+
+
+
+          <li class="menu-items" routerLinkActive="active-menu" style="color: gray; cursor: default;"
+            matTooltip="Раздел в разработке" [matTooltipPosition]="'after'">
             <i class="material-icons">whatshot</i>
             <a>Волонтеры</a>
           </li>
-          <li class="menu-items" routerLinkActive="active-menu">
+
+
+          <li class="menu-items" routerLinkActive="active-menu" style="color: gray; cursor: default;"
+            matTooltip="Раздел в разработке" [matTooltipPosition]="'after'">
             <i class="material-icons">people_alt</i>
             <a>Кураторы</a>
           </li>
@@ -44,11 +58,7 @@
             <i class="material-icons">room</i>
             <a>Передержка</a>
           </li>
-          <li class="menu-items" routerLinkActive="active-menu" style="color: gray; cursor: default;"
-            matTooltip="Раздел в разработке" [matTooltipPosition]="'after'">
-            <i class="material-icons">payment</i>
-            <a>Донаты</a>
-          </li>
+
         </ul>
       </div>
 
