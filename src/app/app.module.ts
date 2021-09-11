@@ -35,6 +35,7 @@ import { TitleModule } from './components/kit/title/title.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HelpBoardModule } from './components/content/main/help-board/help-board.module';
+import { VolonterBoardModule } from './components/content/main/volonter-board/volonter-board.module';
 
 
 registerLocaleData(localeRu, 'ru');
@@ -63,7 +64,8 @@ const UserModules = [
     AdminModule,
     TitleModule,
     MatTooltipModule,
-    HelpBoardModule
+    HelpBoardModule,
+    VolonterBoardModule
 ]
 
 @NgModule({

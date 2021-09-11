@@ -14,6 +14,7 @@ import { AdminGuard } from './components/core/guards/admin.guard';
 import { OnboardingGuard } from './components/core/guards/onboarding.guard';
 import { OnboardingPageGuard } from './components/core/guards/onboardingpage.guard';
 import { HelpBoardComponent } from './components/content/main/help-board/help-board.component';
+import { VolonterBoardComponent } from './components/content/main/volonter-board/volonter-board.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,10 @@ const routes: Routes = [
   { path: 'shelters/:type/:id', component: ItemDetailedCardComponent, data: {breadcrumb: 'Подробности'}, canActivate: [OnboardingGuard]},
   { path: 'shelters/:type/:id/edit', component: ItemFormEditComponent, data: {breadcrumb: 'Изменение'}, canActivate: [OnboardingGuard]},
 
+
+
   { path: 'help', component: HelpBoardComponent, data: {breadcrumb: 'Помощь'}, canActivate: [OnboardingGuard]},
+  { path: 'volonters', component: VolonterBoardComponent, data: {breadcrumb: 'Волонтеры'}, canActivate: [OnboardingGuard]},
 
 
   { path: 'admin', loadChildren: () => import('./components/content/admin/admin.module').then(mod => mod.AdminModule),

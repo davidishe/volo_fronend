@@ -27,23 +27,22 @@
             <a>Помощь</a>
           </li>
 
+          <li class="menu-items" [routerLink]="[ '/volonters']" (click)="sideNavService.openNavSide()"
+            routerLinkActive="active-menu">
+            <i class="material-icons">whatshot</i>
+            <a>Волонтеры</a>
+          </li>
+
           <li class="menu-items" [routerLink]="[ '/pets']" (click)="sideNavService.openNavSide()"
             routerLinkActive="active-menu">
             <i class="material-icons">pets</i>
             <a>Питомцы</a>
           </li>
+
           <li class="menu-items" [routerLink]="[ '/shelters']" (click)="sideNavService.openNavSide()"
             routerLinkActive="active-menu">
             <i class="material-icons">villa</i>
             <a>Приюты</a>
-          </li>
-
-
-
-          <li class="menu-items" routerLinkActive="active-menu" style="color: gray; cursor: default;"
-            matTooltip="Раздел в разработке" [matTooltipPosition]="'after'">
-            <i class="material-icons">whatshot</i>
-            <a>Волонтеры</a>
           </li>
 
 
@@ -90,8 +89,18 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet>
-      <app-nav-menu></app-nav-menu>
-    </router-outlet>
+
+    <app-nav-menu></app-nav-menu>
+
+    <div class="_container-wrapper">
+      <div class="_container">
+        <router-outlet>
+        </router-outlet>
+      </div>
+    </div>
+
+
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>
